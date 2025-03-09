@@ -1,10 +1,11 @@
 import sys
 import os
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add solution to the path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-from factory_example.EUVehicleFactory import EUVehicleFactory
-from factory_example.USVehicleFactory import USVehicleFactory
+from src.factory_example.EUVehicleFactory import EUVehicleFactory
+from src.factory_example.USVehicleFactory import USVehicleFactory
 
 
 class Main:

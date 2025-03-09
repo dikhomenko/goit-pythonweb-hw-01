@@ -1,5 +1,5 @@
 import logging
-from .logging_config import configure_logging
+from ..logging_config import configure_logging
 from .Vehicle import Vehicle
 
 configure_logging()

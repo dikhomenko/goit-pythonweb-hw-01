@@ -1,5 +1,5 @@
 import logging
-from .logging_config import configure_logging
+from src.logging_config import configure_logging
 from .VehicleFactory import VehicleFactory
 from .Car import Car
 from .Motorcycle import Motorcycle

@@ -1,5 +1,15 @@
+import logging
 from abc import ABC, abstractmethod
 from typing import List
+import sys
+import os
+
+import sys
+import os
+
+# Add solution to the path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+from .logging_config import configure_logging
 
 
 class Book:
@@ -38,7 +48,7 @@ class Library(LibraryInterface):
 
     def show_books(self) -> None:
         for book in self.books:
-            print(book)
+            logging.info(book)
 
 
 class LibraryManager:
@@ -57,6 +67,7 @@ class LibraryManager:
 
 
 def main() -> None:
+    configure_logging()
     library = Library()
     manager = LibraryManager(library)
 
@@ -77,8 +88,9 @@ def main() -> None:
             case "exit":
                 break
             case _:
-                print("Invalid command. Please try again.")
+                logging.info("Invalid command. Please try again.")
 
 
 if __name__ == "__main__":
+    configure_logging()
     main()
